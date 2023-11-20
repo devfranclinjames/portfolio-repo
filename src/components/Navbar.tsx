@@ -1,10 +1,19 @@
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import LogoPrimary from "./LogoPrimary";
+
 function Navbar() {
+  const navitemsObj = [
+    { name: "Home", link: "/" },
+    { name: "Resume", link: "/resume" },
+  ];
+  const [selectedIndex, setSelectedIndex] = useState(-1);
+  const navigate = useNavigate();
+
   return (
     <>
       <div className="container px-5">
-        <a className="navbar-brand" href="index.html">
-          <span className="fw-bolder text-primary">Franc</span>
-        </a>
+        <LogoPrimary></LogoPrimary>
         <button
           className="navbar-toggler"
           type="button"
@@ -17,36 +26,22 @@ function Navbar() {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          {navitemsObj.length === 0 && <p>No Navigation Links found.</p>}
           <ul className="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
-            <li className="nav-item">
-              <a className="nav-link" href="index.html">
-                Home
-              </a>
-            </li>
-            <li className="nav-item">
-              <a
-                className="nav-link"
-                href="bootstrap_templates/sb-portfolio/resume.html"
+            {navitemsObj.map((item, index) => (
+              <li
+                className={
+                  selectedIndex === index ? "nav-link active" : "nav-link"
+                }
+                key={item.name}
+                onClick={() => {
+                  setSelectedIndex(index);
+                  navigate(item.link);
+                }}
               >
-                Resume
-              </a>
-            </li>
-            <li className="nav-item">
-              <a
-                className="nav-link"
-                href="bootstrap_templates/sb-portfolio/projects.html"
-              >
-                Projects
-              </a>
-            </li>
-            <li className="nav-item">
-              <a
-                className="nav-link"
-                href="bootstrap_templates/sb-portfolio/contact.html"
-              >
-                Contact
-              </a>
-            </li>
+                {item.name}
+              </li>
+            ))}
           </ul>
         </div>
       </div>

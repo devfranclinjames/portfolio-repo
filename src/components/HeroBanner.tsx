@@ -3,7 +3,7 @@ import dots2 from "../assets/dots2.svg";
 import dots3 from "../assets/dots3.svg";
 import dots4 from "../assets/dots4.svg";
 
-function HeaderHome() {
+function HeroBanner() {
   return (
     <>
       <div className="container px-5 pb-5">
@@ -74,4 +74,4 @@ function HeaderHome() {
   );
 }
 
-export default HeaderHome;
+export default HeroBanner;
