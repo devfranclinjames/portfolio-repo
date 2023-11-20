@@ -48,7 +48,7 @@ function HeroBanner() {
                                     <!-- Watch a tutorial on how to do this on YouTube (link)--> */}
                 <img
                   className="profile-img"
-                  src="bootstrap_templates/sb-portfolio/assets/profile-me.png"
+                  src="src/assets/images/profile-me.png"
                   alt="..."
                 />
 
