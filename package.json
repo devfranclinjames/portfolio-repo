@@ -33,5 +33,12 @@
     "gh-pages": "^6.0.0",
     "typescript": "^5.0.2",
     "vite": "^4.4.5"
+  },  
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/devfranclinjames/portfolio-repo"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
   }
 }
